@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Match - Professional Match 3 Game</title>
+   
+<link rel="stylesheet" href="styles.css"/>
+
+</head>
+<body>
+    <div class="game-container">
+        <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊</button>
+        
+        <!-- Start Screen -->
+        <div class="screen start-screen active" id="startScreen">
+            <h1 class="game-title">🍩 SWEET MATCH 🍩</h1>
+            <p style="font-size: 1.4rem; margin-bottom: 2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Match 3 delicious donuts to score!</p>
+            <button class="play-button" onclick="startGame()">🎮 START GAME</button>
+            <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.8;">Collect stars and unlock new levels!</p>
+        </div>
+
+        <!-- Game Screen -->
+        <div class="screen game-screen" id="gameScreen">
+            <div class="game-layout">
+                <div class="left-panel">
+                    <div class="score-panel">
+                        <div class="score-title">SCORE</div>
+                        <div class="score-value" id="score">0</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-stars">
+                            <div class="star" id="star1">⭐</div>
+                            <div class="star" id="star2">⭐</div>
+                            <div class="star" id="star3">⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-panel">
+                    <div class="game-header">
+                        <div class="header-item">
+                            <div class="header-label">LEVEL</div>
+                            <div class="header-value" id="level">1</div>
+                        </div>
+                        <div class="header-item">
+                            <div class="header-label">MOVES</div>
+                            <div class="header-value" id="moves">30</div>
+                        </div>
+                        <div class="header-item" id="timerDisplay">
+                            <div class="header-label">TIME</div>
+                            <div class="header-value" id="timer">60</div>
+                        </div>
+                    </div>
+                    <div class="game-board" id="gameBoard"></div>
+                </div>
+
+                <div class="right-panel">
+                    <div class="score-panel">
+                        <div class="score-title">TARGET</div>
+                        <div class="score-value" id="target">1000</div>
+                    </div>
+                    <div class="score-panel">
+                        <div class="score-title">BEST</div>
+                        <div class="score-value" id="bestScore">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="screen game-over-screen" id="gameOverScreen">
+            <div id="gameOverContent">
+                <h2 id="gameOverTitle">Game Over!</h2>
+                <div class="final-score">Final Score: <span id="finalScore">0</span></div>
+                <div style="margin: 1rem 0;">
+                    <div style="font-size: 1.2rem;">Level Reached: <span id="finalLevel">1</span></div>
+                    <div style="font-size: 1.1rem; margin-top: 0.5rem;">Stars Earned: <span id="starsEarned">0</span> ⭐</div>
+                </div>
+                <button class="restart-button" onclick="restartGame()">🔄 PLAY AGAIN</button>
+                <button class="menu-button" onclick="showStartScreen()">🏠 MAIN MENU</button>
+            </div>
+        </div>
+    </div>
+
+   
+<script src="script.js"></script>
+
+</body>
+</html>
